@@ -1,0 +1,187 @@
+
+/* =================================
+   CONFIGURACIÓN GENERAL
+================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e0f7ff, #fff0f6);
+    color: #536477;
+    min-height: 100vh;
+}
+
+
+/* =================================
+   CABECERA
+================================= */
+
+header {
+    text-align: center;
+    padding: 65px 20px;
+    background: linear-gradient(120deg, #a8e6f5, #ffc5dc);
+    color: #fff;
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 8px 25px rgba(130, 190, 220, 0.25);
+}
+
+header h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-shadow: 2px 3px 5px rgba(100, 120, 150, 0.2);
+}
+
+header p {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+
+/* =================================
+   CONTENIDO PRINCIPAL
+================================= */
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+section {
+    margin-bottom: 65px;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #dc82a8;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+/* =================================
+   TARJETAS
+================================= */
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(130, 170, 200, 0.15);
+    border: 2px solid white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(220, 130, 168, 0.25);
+}
+
+.tarjeta h3 {
+    color: #e58caf;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.tarjeta p {
+    line-height: 1.7;
+}
+
+
+/* =================================
+   PASTELES
+================================= */
+
+.pastel {
+    border-top: 6px solid #a8e6f5;
+}
+
+.precio {
+    color: #69bcd3;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+
+/* =================================
+   RECETAS
+================================= */
+
+.receta {
+    border-top: 6px solid #ffc5dc;
+}
+
+.receta h4 {
+    color: #78bfd4;
+    margin: 20px 0 12px;
+    font-size: 1.1rem;
+}
+
+.receta ul {
+    list-style: none;
+}
+
+.receta li {
+    background: #edfaff;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    border-left: 4px solid #f3a9ca;
+    transition: all 0.3s ease;
+}
+
+.receta li:hover {
+    background: #ffeaf3;
+    transform: translateX(5px);
+}
+
+
+/* =================================
+   PIE DE PÁGINA
+================================= */
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    background: linear-gradient(120deg, #ffc5dc, #a8e6f5);
+    color: white;
+    font-weight: bold;
+    border-radius: 35px 35px 0 0;
+}
+
+
+/* =================================
+   DISEÑO RESPONSIVE
+================================= */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        width: 92%;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+    }
+
+    .tarjeta {
+        padding: 22px;
+    }
+}

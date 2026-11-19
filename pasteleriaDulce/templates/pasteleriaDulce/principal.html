@@ -1,0 +1,72 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastelería Dulce</title>
+    <link rel="stylesheet" href="{% static 'pasteleriaDulce/css/estilosPrincipales.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <h1>🧁 Pastelería Dulce</h1>
+        <p>Un mundo lleno de sabores y dulzura</p>
+    </header>
+
+    <main>
+
+        <section class="seccion-pasteles">
+            <h2>🍰 Nuestros pasteles</h2>
+
+            <div class="contenedor">
+                {% for pastel in pasteles %}
+                    <article class="tarjeta pastel">
+                        <h3>{{ pastel.nombre }}</h3>
+                        <p class="precio">{{ pastel.precio }} €</p>
+                        <p>{{ pastel.receta.descripcion }}</p>
+                    </article>
+                {% empty %}
+                    <p>No hay pasteles disponibles.</p>
+                {% endfor %}
+            </div>
+        </section>
+
+
+        <section class="seccion-recetas">
+            <h2>🎀 Nuestras recetas</h2>
+
+            <div class="contenedor">
+                {% for receta in recetas %}
+                    <article class="tarjeta receta">
+
+                        <h3>{{ receta.descripcion }}</h3>
+
+                        <h4>Ingredientes</h4>
+
+                        <ul>
+                            {% for ingrediente in receta.ingredientes.all %}
+                                <li>{{ ingrediente.nombre }}</li>
+                            {% empty %}
+                                <li>Sin ingredientes registrados</li>
+                            {% endfor %}
+                        </ul>
+
+                    </article>
+                {% empty %}
+                    <p>Todavía no tenemos recetas.</p>
+                {% endfor %}
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>🩷 Hecho con amor, azúcar y mucha creatividad 🩵</p>
+    </footer>
+
+</body>
+</html>
